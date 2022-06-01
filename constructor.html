@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>생성자</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //name, team, age 3개의 속성을 갖는 객체 5개 생성
+        function Player(name, team, age){
+            this.name = name,
+            this.team = team,
+            this.age = age 
+        }
+        var player1 = new Player("김연경", "현대", 11)
+        var player2 = new Player("곽도정", "현대", 32)
+        var player3 = new Player("박정아", "현대", 25)
+        var player4 = new Player("이윤정", "현대", 34)
+        var player5 = new Player("박도인", "현대", 48)
+
+        console.log(Player()) // undefined
+        console.log(toString(Player())) //[object Undefined]
+        console.log(toString(player1))
+
+        var singer = "김범수"
+        for(var i=0; i<singer.length; i=i+1){
+            alert(singer.charCodeAt(i))         //숫자로 따로 표현
+        }
+
+        var singer = "정지훈"
+        for(var i=0; i<singer.length; i++){
+            alert(String.fromCharCode(singer.charCodeAt(i)))  //정,지,훈 따로 표현
+        }
+
+        var singer = "KHR"
+        for(var i=0; i<singer.length; i++){
+            alert(singer.charCodeAt(i))         //숫자로 따로 표현
+        }
+        var singer = "khr"
+        for(var i=0; i<singer.length; i++){
+            x=singer.charCodeAt(i)
+            alert(String.fromCharCode(x-32))   //k, h, r 따로 표현
+        }
+
+        //날짜계산
+        //월은 -1  
+        var today = new Date()
+        var meetday = new Date(1990, 5, 19)
+        //alert(meetday)   //Tue Jun 19 1990 00:00:00 GMT+0900 (한국 표준시)
+        alert(meetday)
+        //floor 내림, ceiling 올림
+        var interval = today.getTime() - meetday.getTime()
+        interval = Math.floor(
+            interval / (1000 * 60 * 60 * 24))
+        alert(interval)
+
+
+
+    </script>
+</html>

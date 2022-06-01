@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+
+        </title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+
+        var ar=[100, 200, 300, 201, 312, 311]
+
+        //원본의 각 요소에 1씩 더해주기
+        result = ar.map(function(element, index, array){
+            return element + 1
+        })
+        alert(result)
+        //짝수만 골라내기
+        result = ar.filter(function(element, index, array){
+            return element % 2 == 0
+        })
+        alert(result)
+        
+        var jsondata = "{'name': 'khr'}"
+        //현재까지는 문자열
+        alert(typeof(jsondata))
+
+        result = JSON.parse(jsondata)
+        //JSON.parse를 거치면 파싱이 되어 자바스크립트의 데이터가 됨
+        alert(typeof(result))
+        //현재 URL을 확인
+
+        alert(window.location)
+        //다른 URL로 이동
+        window.location = "http://www.naver.com"
+        //팝업창 출력
+        window.open("http://www.google.com", "구글")
+
+        setInterval(function(){
+            document.write("타이머" + "<br/>")}, 10000)
+        alter(navigator)
+           
+    </script>
+</html>

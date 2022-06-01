@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>정규 표현식</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //정규식 만들기
+        //new RegExp('text') = /text/
+        var regExp = /script/
+        var str = "Javascript"
+        //정규식에 문자열 포함여부 - boolean
+        if(regExp.test(str)){
+            alert("문자열에 패턴이 포함되어 있음")
+        }else{
+            alert("문자열에 패턴이 포함되어 있지 않음")
+        }
+
+        var ar = str.split(regExp)
+        for(idx in ar){
+            document.write(ar[idx] + "<br/>")
+        }
+    </script>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>예외처리</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //자바스크립트에서 배열은 4200000000정도 까지만 생성
+        //var ar = new Array(10000000000) //rangeerror
+        try{
+            var ar = new Array(10000000000)
+        }catch(exception){
+            //예외이름과 메시지 출력
+            var str = exception.name + ":" + exception.message + ":" +exception.description
+            alert(str)
+        }
+        alert("여기 실행?")
+
+    </script>
+</html>

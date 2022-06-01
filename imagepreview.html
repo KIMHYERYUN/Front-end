@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>이미지 미리보기</title>
+    </head>
+    <script>
+        window.addEventListener("load", function(e){
+            var imginp = document.getElementById("imginp")
+            var img = document.getElementById("img")
+            //imginp에 change 이벤트를 처리
+            //change 요소변경이 끝나면 어떤 동작에서든 이벤트 실행
+            imginp.addEventListener("change", function(e){
+                //파일이 선택되었다면
+                if(imginp.files && imginp.files[0]){
+                    //파일의 이름 가져오기
+                    var filename = imginp.files[0].name;
+                    //alert(filename)
+                    //파일 읽기 객체 생성
+                    var reader = new FileReader();
+                    //파일 일기-비동기적으로 동작
+                    reader.readAsDataURL(imginp.files[0])
+                    //파일을 전부 로드했으면 처리
+                    reader.addEventListener("load", function(e){
+                        img.src = e.target.result
+                    })
+                }
+
+            })
+        })
+    </script>
+    <body>
+        <input type='file' id="imginp" accept="image/*"/>
+        <img id="img" width="200" height="200" border="1"/>
+    </body>
+    <script>
+
+    </script>
+
+</html>

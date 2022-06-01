@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>EVENT 객체</title>
+    </head>
+
+    <body>
+        <h1 id="title">클릭</h1>
+        <form action="server.jsp" id="regform">
+            id:<input type="text" id="inpid"/>
+            <span id="idmsg"></span>
+            <input type="submit" value="전송"/>
+        </form>
+
+        <div id="outer">외부<p id="inner">내부</p></div>
+    </body>
+    <script>
+        document.getElementById("outer").addEventListener(
+            "click", function(e){
+                alert("외부")
+            }
+        )
+        
+        document.getElementById("inner").addEventListener(
+            "click", function(e){
+                alert("내부")
+
+                var event = e || window.event
+                //IE에서 이벤트 버블링 막기
+                event.cancelBubble = true
+                //IE이 외의 브라우저에서 버블링 막기
+                if(event.stopPropagation){
+                    event.stopPropagation()
+                //event capture(하위탐색) - event bubble(상위전달)
+                //event.cancelBubble or event.stopPropagation(상위 보고없이 직접 처리, bubble stop)
+                }
+            }
+        )
+  
+
+        //form 안에서 submit 버튼을 누르면 form에 submit 이벤트 발생
+        document.getElementById("regform").addEventListener(
+            "submit", function(e){
+                var inpid = document.getElementById("inpid")
+                if(inpid.value.length==0){
+                    //alert("아이디는 필수 입력사항입니다.")
+                    //새로운 창이 아닌 문서에 바로 문구 출력
+                    var idmsg = document.getElementById("idmsg");
+                    idmsg.innerHTML = "아이디는 필수 입력사항입니다"
+                    idmsg.style.color = "blue"
+                    //기본 이벤트 제거
+                    e.preventDefault()  // submit과 동시에 새로 이동되는 것 방지
+                }
+            }
+        )
+
+
+        document.getElementById("title").addEventListener(
+            "click", function(e){
+                //이벤트 객체 가져오기
+                var event = e || window.event;
+                //이벤트 모든 속성 가져오기
+                for(var key in event){
+                    //현재 문서에 추가
+                    document.body.innerHTML +=
+                        "<p>" + key + ":" + event[key] + "</p>"
+                }
+            })
+
+    </script>   
+</html>

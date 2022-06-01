@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>선택자 연습</title>
+        <style>
+            /*태그 선택자는 태그 이름만 설정*/
+            p{
+                color:hotpink;
+            }
+            /*클래스 선택자는 앞에 .추가 */
+            .group{
+                color:blue;
+            }
+            /*아이디 선택자는 앞에 #추가*/
+            #identifier{
+                color:green;
+            }
+            /*hover는 커서를 대면 색깔이 바뀜*/
+            /*기본 검은색, 대면 빨간색, 누르면 배경 회색*/
+            div:hover{
+                color:red;
+            }
+            div:active{
+                background-color:grey;
+            }
+        </style>
+    </head>
+    <body>
+        <p>안녕하세요 반갑습니다.</p>
+        <p class="group">안녕하세요 반갑습니다.</p>
+        <p id="identifier">안녕하세요 반갑습니다.</p>
+        <p class="group">안녕하세요 반갑습니다.</p>
+        <div>의사클래스 사용</div>
+    </body>
+</html>

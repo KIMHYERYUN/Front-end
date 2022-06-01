@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>내장 함수</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var input = prompt("이름을 입력하세요", "기본값입력")
+        if(input == null) { 
+            console.log("취소를 눌렀습니다.")
+        }else{
+            console.log(input)
+        }
+        //취소를 누를경우만(값이 입력이 안되어 있으면 공백 출력, null과 다른것임)
+        //null은 참조하는 데이터 자체가 없는 것이고 ""는 길이가 0인 문자열
+
+        var url = "https://adam.cafe24.com/한글"
+        console.log(url)  //https://adam.cafe24.com/한글
+        console.log(escape(url)) //url로 판단 못함 https%3A//adam.cafe24.com/%uD55C%uAE00 
+        console.log(encodeURI(url)) //https://adam.cafe24.com/%ED%95%9C%EA%B8%80
+        console.log(encodeURIComponent(url))  //url로 판단 못함 https%3A%2F%2Fadam.cafe24.com%2F%ED%95%9C%EA%B8%80
+
+    </script>
+</html>

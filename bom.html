@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Navigator</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var information = navigator.userAgent
+        //information에 chrome이라는 문자열이 포함되어 있는지 대화상자에출력
+        //포함되어 있다 없다로 출력
+        //alert(information)
+        if(information.toLowerCase().indexOf("chrome") >= 0){
+            alert("존재한다.")
+        }else{
+            alert("존재하지않는다")
+        }
+
+    //영문 비교시 대소문자 고민
+    </script>
+</html>

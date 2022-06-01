@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>반복문</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //document.wirte("img src = 'images/image1.png'")
+        /*
+        for(var i=1; i<10; i=i+i) {
+            document.write("<img src='images/image" + i + ".png' width = 300 height =300")
+        }
+        */
+        
+        var i = 1
+        while(i<10) {
+            document.write("<img src='images/image" + i + ".png' width = 300 height = 300");
+            i=i+1;
+        }
+        
+       /*
+        var i = 1
+        do{
+            document.write("<img src='images/image" + i + ".png' width = 300 height = 300")
+            i=i+1
+        }while(i<10)
+        */
+
+        //2~1000까지 완전수의 개수
+        //완전수는 자신을 제외한 약수의 합이 자기 자신인 수
+        //6 : 1+2+3
+        var cnt = 0
+        for(var i=2; i <= 1000; i++){
+            //약수의 합을 구할 변수 생성
+            var sum = 0;  // var sum = 1도 가능(모든 수의 약수 1) ; 1이라고 쓰면 999번 덜 실행될 수 있음
+            for(var j=1; j<i; j++) {  //sum 1부터일경우 j=2
+                if(i%j==0) {
+                    sum += j;
+                }
+                //약수의 합이 자기 자신인지 확인
+                if(sum == i){
+                    console.log(i)
+                    cnt += 1;
+                }
+            }
+        }
+        console.log("완전수의 개수:" + i)
+        
+        //for ~ in
+        var ar = ["봄", "여름", "가을", "겨울"]
+        for(var property in ar){
+            console.log(property)
+        }    
+
+    </script>
+</html>

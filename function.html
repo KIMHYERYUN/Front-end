@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title>사용자 정의 함수</title>
+    </head>
+    <body>
+        <input type="button" value="버튼" id="btn"/>
+    </body>
+    <script>
+        function func1(){
+            console.log("사용자 정의함수 1")
+        }
+
+        func1()
+
+        var func2 = function(){
+            console.log("사용자 정의함수2")
+        }
+
+        func2()
+
+        //매개변수가 있는 함수
+        var func3 = function(irum) {
+            console.log(irum)
+        }
+        func3("입력값")  // 입력값
+        func3()         // undefined(매개변수 생략)
+
+        //return이 있는 함수
+        var func4 = function(first, second) {
+            return first + second
+        }
+
+        func4(1,2)  // 결과값이 나오지 않음
+        var result = func4(1, 2)
+        console.log("result:" + result)
+
+        //버튼이 생성되고 버튼을 누르면 func5가 실행
+        var func5 = function(){
+            alert("콜백함수")
+        }
+
+        document.getElementById("btn").addEventListener('click', func5)
+
+        //오버로딩 : 매개변수 갯수, 타입 상관없음 - 생략하고 호출도 가능하기 때문에
+
+        //arguments를 이용한 매개변수 사용
+        var func6 = function(irum){
+            alert(arguments[0])
+        }
+        func6("스우파")
+
+        //피보나치 수열
+        //1,1,2,3,5,8,13,21,34,55...
+        //첫번째와 두번째는 1
+        //세번째부터는 이전 항 2개의 합
+        var norecursionfibo = function(n){
+            var first = 1
+            var second = 1
+            var fibo = 1
+            for(var i=3; i<=n; i++){
+                fibo = first + second
+                second = first
+                first = fibo
+            }
+            return fibo
+        }
+            var r = norecursionfibo(10)
+            alert(r)
+
+            var fibonacci = function(n){
+                //첫번째와 두번째는 1
+                if(n==1 | n==2){
+                    return 1
+                }
+                //나머지의 경우는 이전 2개의 합
+                return fibonacci(n-1) + fibonacci(n-2)
+            }
+            r = fibonacci(10)
+            alert(r)
+
+
+            var outer = function(){
+                var x =10
+                //함수 안에서 함수를 만들어서 리턴
+                return function(){
+                    x=x+1
+                    alert(x)
+                }
+            }
+            //x는 outer 함수의 지역변수이므로 외부에서 사용할 수 없음
+            //x=x+1
+            //함수는 일급객체
+            //closure:함수안에서 함수를 리턴하는 방법을 이용해 함수 내의 값을 외부에서 수정
+            //내부 데이터는 지역변수이기 때문에 외부에서 수정할 수 없음
+
+            var inner = outer()
+            document.write(inner(5))  //undefined
+
+
+
+    </script>
+</html>

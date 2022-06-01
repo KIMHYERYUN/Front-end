@@ -1,0 +1,9 @@
+h1{
+    font:bold normal small-caps 18px/1.6 "돋움";
+}
+
+h4{
+    font-size:100px;
+    color:#a3f409;
+    text-shadow: -0.05em -0.05em 0.05em purple, 0.03em 0.03em 0.05em blue
+}

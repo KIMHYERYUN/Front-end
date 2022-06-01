@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM</title>
+    </head>
+    <!--
+    <script>
+        window.onload = function(e){
+            document.getElementById("title").innerHTML="제목"   //변화 없음, body 아래부분에 작성 시 적용(script는 순서대로 적용)
+        }
+        //window.onload라는 method를 사용하면 적용 가능
+    </script>
+    -->
+    <body>
+        <h1 id="title"></h1>
+        <input type="button" id="btnred" value="빨강" onclick ="alert('클릭')"/>
+        <input type="button" id="btnblue" value="파랑"/>
+        <button id="btngreen">초록</button>
+    </body>
+    <script>
+        //id가 title인 객체를 찾아오기
+        var title = document.getElementById("title")
+        //태그안에 내용 삽입
+        title.innerHTML = "제목"
+        //스타일 변경
+        title.style.color = "orange"
+
+        var btnred = document.getElementById("btnred")
+        var btnblue = document.getElementById("btnblue")
+        //고전적 이벤트 처리
+        btnblue.onclick = function(e){
+            title.style.color = "blue"
+        }
+        var btngreen = document.getElementById("btngreen")
+        //표준 이벤트 처리
+        btngreen.addEventListener('click', function(e){
+            title.style.color = "green"
+        })
+        title.addEventListener('click', function(e){
+            //이벤트 처리 함수에서 this는 이벤트가 발생한 객체
+            this.style.color = 'red'
+        })
+    </script>   
+</html>
