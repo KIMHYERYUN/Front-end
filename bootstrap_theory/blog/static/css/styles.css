@@ -1,0 +1,74 @@
+h1, h2 {
+    font-family: "Ubuntu";
+    line-height: 1.5;
+    text-align: center;
+}
+
+body {
+    font-family: "Prompt";
+}
+
+.container-fluid {
+    padding: 7% 15%
+}
+
+p{
+}
+
+/*Navigatior*/
+
+.navbar-brand {
+    font-size: 2rem;
+}
+.nav-item {
+    padding: 10% 5%;
+}
+
+
+/*Title Section*/
+
+.title {
+    background-image: url("https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+    background-repeat: space;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+.title-header {
+    margin: 7% 10%;
+    color; #ffffff;
+}
+.title-home{
+    font-size: 100px;
+}
+.subtitle-home{
+    font-size: 30px;
+}
+
+
+
+/*Footer*/
+#footer {
+    text-align: center;
+}
+
+
+
+
+/*About Me*/
+.about-me-body{
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    line-height: 2;
+}
+
+
+/*Contact*/
+.row {
+    margin: 1rem;
+}
+.send-button {
+    margin: 1% 27%;
+}
+
+/*Media Query*/
+@Media
