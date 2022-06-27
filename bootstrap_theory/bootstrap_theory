@@ -1,0 +1,52 @@
+1. bootstrap : font-end 집합체 : 라이브러리 모음
+2. responsice : 다양한 기기의 크기에  맞게 뷰포트 - 동적
+3. css 별도 작성없이 class 이름으로만으로도 적용가능
+
+
+#프레임워크 사이트 : www.codeply.com/go
+
+CDN(Content Delivery Network) : 해저케이블 통해 전세계 연결 / 가장 빠른 경로 선택
+
+
+
+ml : margin left -> bootstrap 5 : ms
+mr : margin right -> bootstrap 5 : me
+
+div class="row" -> div class="col" div class="col" div class="col" .... : 갯수만큼 열 구분(한줄에)
+또는
+div class="row" -> div class="col-n" : 화면 %에 대해 열 구분(총 12개의 열을 몇개를 합칠지 = n = 12/화면에  몇개를 보여주고 싶은지)
+                   div class="col-md-n : md : 태블릿, 노트북, 대형데스크탑은 모두 6개 단위 차지 / 휴대폰은 x
+div class="col" div class="col"/... : 갯수만큼 행 구분
+
+grid-system :
+    핸드폰(540) - 테플릿(880) - 노트북/데스크탑(1200)
+    col-xs/col- : 항상 가로 배치
+    col-sm : 760px이하에서 세로표시 시작 - 핸드폰
+    col-md : 992px이하에서 세로표시 시작 - 테블릿
+    col-lg : 1200px이하에서 세로표시 시작 - 노트북/데스크탑
+    col-xl : 1200px이상
+    작성하지 않으면 : 100%
+
+container : 각 사이즈에 맞게 출력(자동 사이즈 조절) - 1140px(상하좌우 여백)
+fluid-container : 각 사이즈에 맞게 출력(자동 사이즈 조절) - full screen(상하 여백)
+
+
+container : 여러요소 감싸기 vs wrapper : 단일개체 감싸기
+
+carousel : 슬라이드 쇼 (수동-control 추가 및 data-interval 불필요, 자동)
+    data-interval : 5000 - 5s 기본
+    data-pause : "hover" - 마우스를 올려놓으면 stop
+
+    aria-hidden : 시각장애를 위해 숨김
+    sr-only : screen reader를 통해 이전이라고 표시
+
+
+card : 이미지, 제목, 글씨, 버튼 등 컨테이너 통합
+    card-header / card-body / card-footer로 구성
+
+btn별 옵션 : btn-block : bootstrap 5이상 x - col-12
+
+
+
+아이콘 이미지 사이트 : fontawesome.com
+bootstrap 예시 : bootsnipp.com
